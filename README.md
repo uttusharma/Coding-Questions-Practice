@@ -1,2 +1,2 @@
-# Coding-Question-Practice
+# Coding-Questions-Practice
 Collection of LeetCode questions to ace the coding interview!
