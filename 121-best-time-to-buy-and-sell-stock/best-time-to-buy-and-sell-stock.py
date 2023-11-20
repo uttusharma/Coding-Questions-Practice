@@ -3,17 +3,14 @@ class Solution:
         if not prices:
             return 0
 
-        left = 0
-        right = 1
-
-        maxProfit = 0
-
-        while right < len(prices):
-            if prices[left] <= prices[right]:
-                maxProfit = max(maxProfit, prices[right] - prices[left])
-                right += 1
-            else:
-                left = right
-                right += 1
-    
-        return maxProfit
+        buy_price = prices[0] # at the begining the minimum price is the first price
+        profit = 0 # at the begining the minimum  profit is zero
+        
+        for i in range(1,len(prices)):
+            #if the current price is less than the previous buy price ; update the buy_price
+            if prices[i] < buy_price:
+                buy_price = prices[i]
+            else: # if not check if you sell with the current price would you get better profit than the previous one
+                profit = max(profit, prices[i]-buy_price) # compare the previous profit with the current profit
+                
+        return profit
