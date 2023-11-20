@@ -1,6 +1,6 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        if not prices:
+        if len(prices) == 0:
             return 0
 
         buy_price = prices[0] # at the begining the minimum price is the first price
