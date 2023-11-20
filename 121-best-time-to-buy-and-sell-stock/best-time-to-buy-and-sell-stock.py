@@ -3,11 +3,17 @@ class Solution:
         if not prices:
             return 0
 
-        maxProfit = 0
-        minPurchase = prices[0]
+        left = 0
+        right = 1
 
-        for i in range(1, len(prices)):
-            maxProfit = max(maxProfit, prices[i] - minPurchase)
-            minPurchase  = min(minPurchase, prices[i])
-        
+        maxProfit = 0
+
+        while right < len(prices):
+            if prices[left] <= prices[right]:
+                maxProfit = max(maxProfit, prices[right] - prices[left])
+                right += 1
+            else:
+                left = right
+                right += 1
+    
         return maxProfit
