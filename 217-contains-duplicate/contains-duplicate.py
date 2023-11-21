@@ -1,14 +1,19 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        seen = set()
+        # Hash set crazy method 2
+        return len(set(nums))!=len(nums)
+
+
+        # Hash set method 1
+        # seen = set()
+
+        # for i in nums:
+        #     if i in seen:
+        #         return True
+        #     else:
+        #         seen.add(i)
         
-        for i in nums:
-            if i in seen:
-                return True
-            else:
-                seen.add(i)
-        
-        return False
+        # return False
 
 
         # Sorting method
